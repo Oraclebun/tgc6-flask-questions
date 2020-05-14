@@ -4,6 +4,17 @@ import os
 app = Flask(__name__)
 
 # your code here
+@app.route('/')
+def home():
+    return 'hi everybody'
+
+@app.route('/about')
+def about():
+    return 'i am very smart'
+
+@app.route('/double/<n>')
+def double(n):
+    return str(int(n)*2)
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
