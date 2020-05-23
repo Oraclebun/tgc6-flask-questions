@@ -1,0 +1,41 @@
+{% extends 'layout.template.html' %}
+
+{%block title%}
+Book a seat
+{%endblock%}
+
+{%block content %}
+    <form method="POST" action = "{{url_for('display')}}">
+        <div>
+            <label>Customer Name:</label>
+            <input type="text" name="name"/>
+        </div>
+        <div>
+            <label>Seating Type</label>
+            <input type="radio" name="seating-type" value="indoors" checked/>Indoors
+            <input type="radio" name="seating-type" value="outdoors"/>Outdoors
+            <input type="radio" name="seating-type" value="smoking"/>Smoking
+        </div>
+        <div>
+            <label>Time</label>
+            <input type="radio" name="time" value="morning" checked/>Morning
+            <input type="radio" name="time" value="afternoon"/>Afternoon
+            <input type="radio" name="time" value="evening"/>Evening
+        </div>
+        <div>
+            <label>Services</label>
+            <input type="checkbox" name="services" value="wet-napkins"/>Wet Napkins
+            <input type="checkbox" name="services" value="free-flow-drinks"/>Free flow drinks
+            <input type="checkbox" name="services" value="baby-seats"/>Baby Seats
+        </div>
+        <div class="form-group">
+            <label>How did you hear about us</label>
+            <select name="how-did-you" class="form-control">
+                <option value="word-of-mouth" selected>Word of mouth</option>
+                <option value="social-media">Social media</option>
+                <option value="reviews">Reviews</option>
+            </select>
+        </div>
+        <input type="submit" value="Book Now" class="btn btn-primary"/>
+    </form>
+{% endblock %}

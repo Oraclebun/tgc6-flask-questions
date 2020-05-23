@@ -3,22 +3,13 @@ import os
 
 app = Flask(__name__)
 
-# your code here
 @app.route('/')
-def home():
-    return 'hi everybody'
+def index():
+    return render_template('index.template.html')
 
-@app.route('/about')
-def about():
-    return 'i am very smart'
-
-@app.route('/double/<n>')
-def double(n):
-    return str(int(n)*2)
-
-@app.route('/add/<int:n1>/<int:n2>')
-def add_two(n1,n2):
-    return str(n1+n2)
+@app.route('/products')
+def products():
+    return render_template('products.template.html')
 
 # "magic code" -- boilerplate
 #if __name__ == '__main__':

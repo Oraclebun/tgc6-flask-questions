@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Welcome to my homepage!</title>
 </head>
 <body>
-    <div id="answer">
-    <h1>
-        {{result}}
-    </h1>
+    <div id="nav">
+        <a href="{{url_for('index')}}">Home</a> | <a href="{{url_for('gallery')}}"> Gallery</a>
     </div>
+    {%block content %}{%endblock%}
 </body>
 </html>
+
