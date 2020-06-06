@@ -1,0 +1,10 @@
+{% extends 'base.template.html' %}
+
+{% block content %}
+<h2> Your search results: </h2>
+<ul>
+    {% for b in book_result %}
+    <li>{{b.title}} by {{b.author}} with isbn {{b.isbn}}</li>
+    {% endfor %}
+</ul>
+{%endblock%}

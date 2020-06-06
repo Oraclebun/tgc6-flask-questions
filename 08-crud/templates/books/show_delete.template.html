@@ -1,0 +1,27 @@
+{%extends 'base.template.html' %}
+
+{%block content%}
+
+<h1> Welcome to the Library:</h1>
+<h2> Choose the book you want to delete:</h2>
+
+<ul>
+    {% for b in books %}
+    <li>{{b.title}} by {{b.author}} </li>
+    {% endfor %}
+</ul>
+
+
+<form method="POST">
+    <div class="form-group">
+        <label for="isbn">Select to Delete</label>
+        <select class="form-control" name="book_prop">
+            {% for b in books %}
+            <option value="{{b.title}}-{{b.isbn}}">{{b.title}} - {{b.isbn}}</option>
+            {% endfor %}   
+        </select>
+        <input type="submit" class="btn btn-primary"/>
+      </div> 
+    </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{%extends 'base.template.html' %}
+
+{%block title%}
+Library
+{%endblock%}
+
+{%block content%}
+<h1> Welcome to the Library:</h1>
+
+<button type="button" class="btn btn-primary"><a href="{{ url_for('add_record_book')}}">Create</a></button>
+<button type="button" class="btn btn-info">Read</button>
+<button type="button" class="btn btn-success"><a href="{{ url_for('select_book_to_edit')}}">Update</a></button>
+<button type="button" class="btn btn-danger"><a href="{{ url_for('select_to_delete')}}">Delete</a></button>
+
+ <ul>
+    {% for b in books %}
+    <li>{{b.title}} by {{b.author}} </li>
+    {% endfor %}
+</ul>
+
+{%endblock%}

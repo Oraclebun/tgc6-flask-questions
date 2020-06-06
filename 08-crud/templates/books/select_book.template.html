@@ -1,0 +1,19 @@
+{% extends 'base.template.html' %}
+
+{% block content %}
+<h1>Edit Books</h1>
+
+<form method="POST">
+    
+    <div class="form-group">
+        <label for="isbn">Select ISBN</label>
+        <select class="form-control" name="isbn">
+          {% for b in books %}
+          <option value="{{b.isbn}}">{{b.isbn}}-{{b.title}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" class="btn btn-primary"/>
+      </div>
+    
+    </form>
+{% endblock %}
